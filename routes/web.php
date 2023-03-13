@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome'); // jadi dia nge return folder resources bagian views/welcome
+});
+
+Route::get('/homee', function () {
+    return view('layout.master'); // jadi dia nge return folder resources bagian views/welcome
 });
