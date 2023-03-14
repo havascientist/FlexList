@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Rahel</title>
+    <title>FlexList</title>
     <link rel="stylesheet" href="{{asset('templet/assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('templet/assets/css/fontawesome.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href={{asset('templet/images/flexbesar.png')}} type="image/x-icon"/>
 </head>
 <body>
 <!-- ////////////////////////////////////////////////////////////////////////////////////////
@@ -18,7 +19,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
     <div class="container">
       <a class="navbar-brand" href="">
-        <img src="images/logo.png" alt="logo image">
+        <img src="{{asset('templet/images/flexlist.png')}}" alt="logo image" width="100px" height="100px"> <!-- ngecilin logo nya gimana-->
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -26,17 +27,17 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-          <li class="nav-item"><a class="nav-link" href="#faq">faq</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">portfolio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">contact</a>
+          <li class="nav-item"><a class="nav-link" href="#todolis" >To Do List</a></li>
+          <li class="nav-item"><a class="nav-link" href="#Schedule">Schedule</a></li>
+          <li class="nav-item"><a class="nav-link" href="#notes">Notes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">QnA</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a>
           </li>
         </ul>
         <button type="button" class="rounded-pill btn-rounded">
-          081316743514
+          Login
           <span>
-            <i class="fas fa-phone-alt"></i>
+            <i class="fas fa-sign-in-alt"></i>
           </span>
         </button>
       </div>
@@ -49,29 +50,24 @@
 
 <section id="home" class="intro-section">
   <div class="container">
-    <div class="row align-items-center text-white">
+    <div class="row align-items-center text-white"> <!-- kasih warna nya disini ygy -->
       <!-- START THE CONTENT FOR THE INTRO  -->
       <div class="col-md-6 intros text-start">
         <h1 class="display-2">
-          <span class="display-2--intro">Hey!, I'm Recel patrisiahh ges</span>
+          <span class="display-2--intro">Hello! Welcome to FlexList</span>
           <span class="display-2--description lh-base">
-            this is my gabut web
+            FlexList merupakan aplikasi berbasis web di mana user dapat membuat to do list/planning.
           </span>
         </h1>
-        <button type="button" class="rounded-pill btn-rounded">Get in Touch
+        <a href="#services"><button type="button" class="rounded-pill btn-rounded"> Lebih lanjut
           <span><i class="fas fa-arrow-right"></i></span>
-        </button>
+        </button> </a>
       </div>
       <!-- START THE CONTENT FOR THE VIDEO -->
       <div class="col-md-6 intros text-end">
         <div class="video-box">
-          <img src="{{asset('templet/images/arts/intro-section-illustration.png')}}" alt="video illutration" class="img-fluid">
-          <a href="#" class="glightbox position-absolute top-50 start-50 translate-middle">
-            <span>
-              <i class="fas fa-play-circle"></i>
-            </span>
-            <span class="border-animation border-animation--border-1"></span>
-            <span class="border-animation border-animation--border-2"></span>
+          <img src="{{asset('templet/images/lagilagi.png')}}" alt="video illutration" class="img-fluid" width="2000px" height="1500">
+          <a href="#" class="glightbox position-absolute top-50 start-50 translate-middle">          
           </a>
         </div>
       </div>
@@ -80,7 +76,7 @@
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,208C384,192,480,128,576,133.3C672,139,768,213,864,202.7C960,192,1056,96,1152,74.7C1248,53,1344,107,1392,133.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 </section>
 
-<!-- //////////////////////////////////////////////////////////////////////////////////////////////
+{{-- <!-- //////////////////////////////////////////////////////////////////////////////////////////////
                              START SECTION 3 - THE CAMPANIES SECTION  
 ////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
@@ -126,7 +122,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
 
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////
                          START SECTION 4 - THE SERVICES  
@@ -134,7 +130,7 @@
 <section id="services" class="services">
   <div class="container">
     <div class="row text-center">
-      <h1 class="display-3 fw-bold">Our Services</h1>
+      <h1 class="display-1 fw-bold">Introduce</h1>
       <div class="heading-line mb-1"></div>
     </div>
   <!-- START THE DESCRIPTION CONTENT  -->
@@ -142,16 +138,14 @@
       <div class="col-md-6 border-right">
         <div class="bg-white p-3">
           <h2 class="fw-bold text-capitalize text-center">
-            Our Services Range From Initial Design To Deployment Anywhere Anytime
+            Our Services Range From Initial To Manage Your Proceedings Anywhere Anytime
           </h2>
         </div>
       </div>
       <div class="col-md-6">
         <div class="bg-white p-4 text-start">
           <p class="fw-light">
-            Lorem ipsum dolor sit amet consectetur architecto magni, 
-            dicta maxime laborum temporibus dolorem esse doloremque illo quas nisi enim molestias. 
-            Tempore ducimus molestiae in dolore enim.
+           Di era sekarang dimana semua serba digital, pencatatan manajemen waktu ataupun rencana/planning tentu dapat pula di lakukan secara digital. Aplikasi ini dilatarbelakangi oleh kebutuhan harian user tentang manajemen rencana yang mana bertujuan meningkatkan produktivitas user serta untuk mengorganisir tugas-tugas ataupun prioritas user (dengan cara pengurutan). Di lengkapi dengan fitur-fitur tambahan selain pencatatan /list prioritas user yang mana dapat semakin menunjang fungsi utama dari aplikasi.
           </p>
         </div>
       </div>
@@ -164,21 +158,19 @@
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
         <div class="services__content">
-          <div class="icon d-block fas fa-paper-plane"></div>
-          <h3 class="display-3--title mt-1">Marketing</h3>
+          <div class="icon d-block fas fa-clipboard-list"></div>
+          <h3 class="display-3--title mt-1">Notes</h3>
           <p class="lh-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, impedit rem,
-             doloremque autem quibusdam blanditiis harum alias hic accusantium 
-             maxime atque ratione magni repellat?
+            Notes merupakan salah satu fitur FlexList dimana anda dapat mencatat/menulis catatan anda dalam bentuk online sehingga dapat di akses kapanpun dan di manapun.
           </p>
-          <button type="button" class="rounded-pill btn-rounded border-primary">Learn more
+          <button type="button" class="rounded-pill btn-rounded border-primary"> lebih lanjut
             <span><i class="fas fa-arrow-right"></i></span>
           </button>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end">
         <div class="services__pic">
-          <img src="images/services/service-1.png" alt="marketing illustration" class="img-fluid">
+          <img src="{{asset('templet/images/services/service-1.png')}}" alt="marketing illustration" class="img-fluid">
         </div>
       </div>
     </div>
@@ -186,17 +178,15 @@
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-start">
         <div class="services__pic">
-          <img src="images/services/service-2.png" alt="web development illustration" class="img-fluid">
+          <img src="{{asset('templet/images/services/service-2.png')}}" alt="web development illustration" class="img-fluid">
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
         <div class="services__content">
-          <div class="icon d-block fas fa-code"></div>
-          <h3 class="display-3--title mt-1">web development</h3>
+          <div class="icon d-block fas fa-clock"></div>
+          <h3 class="display-3--title mt-1">Schedule</h3>
           <p class="lh-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, impedit rem,
-             doloremque autem quibusdam blanditiis harum alias hic accusantium 
-             maxime atque ratione magni repellat?
+            FlexList menyediakan fitur Schedule dimana anda dapat melakukan perencanaan jadwal keseharian dan memvisualisasikannya dalam fitur ini. 
           </p>
           <button type="button" class="rounded-pill btn-rounded border-primary">Learn more
             <span><i class="fas fa-arrow-right"></i></span>
@@ -208,12 +198,10 @@
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
         <div class="services__content">
-          <div class="icon d-block fas fa-cloud-upload-alt"></div>
-          <h3 class="display-3--title mt-1">cloud hosting</h3>
+          <div class="icon d-block fas fa-server"></div>
+          <h3 class="display-3--title mt-1">To Do</h3>
           <p class="lh-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, impedit rem,
-             doloremque autem quibusdam blanditiis harum alias hic accusantium 
-             maxime atque ratione magni repellat?
+            Merupakan fitur utama FlexList. Dimana anda dapat membuat perencanaan baik jangka pendek hingga jangka panjang dalam bentuk list-list.
           </p>
           <button type="button" class="rounded-pill btn-rounded border-primary">Learn more
             <span><i class="fas fa-arrow-right"></i></span>
@@ -222,14 +210,81 @@
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end">
         <div class="services__pic">
-          <img src="images/services/service-3.png" alt="cloud hosting illustration" class="img-fluid">
+          <img src="{{asset('templet/images/services/service-3.png')}}" alt="cloud hosting illustration" class="img-fluid">
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////
+                                            {{-- TO DO LIST--}}
+ ///////////////////////////////////////////////////////////////////////////////////////////-->
+<section id="todolis" class="todolis">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+  <div class="container">
+    <div class="row text-center text-white">
+      <h1 class="display-3 fw-bold">To Do List</h1>
+      <hr style="width: 100px; height: 3px; " class="mx-auto">
+      <p class="lead pt-1">what our clients are saying</p>
+    </div>
+
+   
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+</section>
+
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////
+                                            {{-- SCHEDULE --}}
+ ///////////////////////////////////////////////////////////////////////////////////////////-->
+
+<section id="Schedule" class="Schedule">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+  <div class="container">
+    <div class="row text-center text-white">
+      <h1 class="display-3 fw-bold">Schedule</h1>
+      <hr style="width: 100px; height: 3px; " class="mx-auto">
+      <p class="lead pt-1">what our clients are saying</p>
+    </div>
+
+   
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+</section>
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////
+                                            {{-- NOTES--}}
+ ///////////////////////////////////////////////////////////////////////////////////////////-->
+
+<section id="notes" class="notes">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+  <div class="container">
+    <div class="row text-center text-white">
+      <h1 class="display-3 fw-bold">Notes</h1>
+      <hr style="width: 100px; height: 3px; " class="mx-auto">
+      <p class="lead pt-1">what our clients are saying</p>
+    </div>
+
+   
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+</section>
+
+{{-- <!-- ////////////////////////////////////////////////////////////////////////////////////////////////
                                START SECTION 5 - THE TESTIMONIALS  
 /////////////////////////////////////////////////////////////////////////////////////////////////////-->
 <section id="testimonials" class="testimonials">
@@ -368,7 +423,7 @@
     </div>
   </div>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-</section>
+</section> --}}
 
 <!-- /////////////////////////////////////////////////////////////////////////////////////////////////
                        START SECTION 6 - THE FAQ 
@@ -376,9 +431,9 @@
 <section id="faq" class="faq">
   <div class="container">
     <div class="row text-center">
-      <h1 class="display-3 fw-bold text-uppercase">faq</h1>
+      <h1 class="display-3 fw-bold text-uppercase">QnA</h1>
       <div class="heading-line"></div>
-      <p class="lead">frequently asked questions, get knowledge befere hand</p>
+      <p class="lead">Qusetion and Answer <br> frequently asked questions, get knowledge befere hand</p>
     </div>
     <!-- ACCORDION CONTENT  -->
     <div class="row mt-5">
@@ -388,12 +443,12 @@
           <div class="accordion-item shadow mb-3">
             <h2 class="accordion-header" id="headingOne">
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                What are the main features?
+              What is a to-do list web application?
               </button>
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              A to-do list web application is a software program that helps you organize and manage tasks or activities that need to be completed.
               </div>
             </div>
           </div>
@@ -401,12 +456,12 @@
           <div class="accordion-item shadow mb-3">
             <h2 class="accordion-header" id="headingTwo">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                do i have to pay again after trial
+              How does a to-do list web application work?
               </button>
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                A to-do list web application typically allows users to create tasks, set due dates, prioritize tasks, add notes or descriptions, and mark tasks as completed. The application may also offer features such as reminders, notifications, and the ability to collaborate with others.
               </div>
             </div>
           </div>
@@ -414,12 +469,12 @@
           <div class="accordion-item shadow mb-3">
             <h2 class="accordion-header" id="headingThree">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            How can I get started after trial?
+              What are the benefits of using a to-do list web application?
               </button>
             </h2>
             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                A to-do list web application can help increase productivity, reduce stress and anxiety, and improve time management. By organizing tasks and setting priorities, users can focus on the most important tasks and avoid wasting time on less important ones.
               </div>
             </div>
           </div>
@@ -427,12 +482,12 @@
           <div class="accordion-item shadow mb-3">
             <h2 class="accordion-header" id="headingFour">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                Can I be refunded if am not satisfied?
+                Can I access my to-do list web application from different devices?
               </button>
             </h2>
             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                Yes, most to-do list web applications are accessible from multiple devices such as computers, smartphones, and tablets. This allows users to access their to-do list from anywhere with an internet connection.
               </div>
             </div>
           </div>
@@ -440,8 +495,11 @@
       </div>
     </div>
   </div>
+  <br><br><br><br>
 </section>
 
+
+{{-- 
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////
                               START SECTION 7 - THE PORTFOLIO  
 //////////////////////////////////////////////////////////////////////////////////////////////////////-->
@@ -568,7 +626,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 
 <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////
               START SECTION 8 - GET STARTED  
@@ -576,30 +634,42 @@
 <section id="contact" class="get-started">
   <div class="container">
     <div class="row text-center">
-      <h1 class="display-3 fw-bold text-capitalize">Get started</h1>
+      <h1 class="display-3 fw-bold text-capitalize">Our Contact</h1>
       <div class="heading-line"></div>
       <p class="lh-lg">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero illum architecto modi.
+        We receive about new ideas that can help us to improve FlexList💗 <br>Also you can connect with us through our contact.
       </p>
     </div>
 
     <!-- START THE CTA CONTENT  -->
     <div class="row text-white">
-      <div class="col-12 col-lg-6 gradient shadow p-3">
+      <div class="gradient shadow p-3">
         <div class="cta-info w-100">
-          <h4 class="display-4 fw-bold">100% Satisfaction Guaranteed</h4>
-          <p class="lh-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam alias optio minima, tempore architecto sint ipsam dolore tempora facere laboriosam corrupti!
-          </p>
-          <h3 class="display-3--brief">What will be the next step?</h3>
-          <ul class="cta-info__list">
-            <li>We'll prepare the proposal.</li>
-            <li>we'll discuss it together.</li>
-            <li>let's start the discussion.</li>
-          </ul>
+          <center><h4 class="display-4 fw-bold">Kritik dan Saran</h4> </center> 
+          <br> <br>       
+          <form action="#" class="row">
+            <div class="col-lg-6 col-md mb-3">
+              <input type="text" placeholder="Nama Depan" id="inputFirstName" class="shadow form-control form-control-lg">
+            </div>
+            <div class="col-lg-6 col-md mb-3">
+              <input type="text" placeholder="Nama Belakang" id="inputLastName" class="shadow form-control form-control-lg">
+            </div>
+            <div class="col-lg-12 mb-3">
+              <input type="email" placeholder="Email" id="inputEmail" class="shadow form-control form-control-lg">
+            </div>
+            <div class="col-lg-12 mb-3">
+              <textarea name="message" placeholder="Tulis kritik dan saran anda di sini..." id="message" rows="3" class="shadow form-control form-control-lg"></textarea>
+            </div>
+            <div class="text-center d-grid mt-1">
+              <button type="button" class="btn btn-primary rounded-pill pt-3 pb-3">
+                submit
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
-      <div class="col-12 col-lg-6 bg-white shadow p-3">
+      {{-- <div class="col-6 col-lg-6 bg-white shadow p-3">
         <div class="form w-100 pb-2">
           <h4 class="display-3--title mb-5">start your project</h4>
           <form action="#" class="row">
@@ -623,7 +693,7 @@
             </div>
           </form>
         </div>
-      </div>
+      </div> --}}
     </div>
   </div>
 </section>
@@ -645,7 +715,7 @@
           </svg>
         </div>
         <div class="contact-box__info">
-          <a href="#" class="contact-box__info--title">+1 728365413</a>
+          <a href="#" class="contact-box__info--title">081316743514 <br> 081271076622 <br> 082269706975</a>
           <p class="contact-box__info--subtitle">  Mon-Fri 9am-6pm</p>
         </div>
       </div>  
@@ -661,8 +731,8 @@
           </svg>
         </div>
         <div class="contact-box__info">
-          <a href="#" class="contact-box__info--title">info@company.com</a>
-          <p class="contact-box__info--subtitle">Online support</p>
+          <a href="#" class="contact-box__info--title">flexlist0@gmail.com</a>
+          <p class="contact-box__info--subtitle">Our Gmail</p>
         </div>
       </div>
       <!-- CONTENT FOR LOCATION  -->
@@ -678,8 +748,8 @@
           </svg>
         </div>
         <div class="contact-box__info">
-          <a href="#" class="contact-box__info--title">New York, USA</a>
-          <p class="contact-box__info--subtitle">NY 10012, US</p>
+          <a href="https://telkomuniversity.ac.id/" class="contact-box__info--title">Telkom University</a>
+          <p class="contact-box__info--subtitle">Bandung, West Java</p>
         </div>
       </div>
     </div>
@@ -692,18 +762,15 @@
         <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
           connect with us on social media
         </div>
-        <div class="col-lg-7 col-md-6">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
+        <div class="col-lg-7 col-md-6">        
+          <a href="https://github.com/havascientist/FlexList"><i class="fab fa-github"></i></a>          
+          <a href="https://www.instagram.com/flex_list/"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- START THE CONTENT FOR THE CAMPANY INFO -->
+  {{-- <!-- START THE CONTENT FOR THE CAMPANY INFO -->
   <div class="container mt-5">
     <div class="row text-white justify-content-center mt-3 pb-3">
       <div class="col-12 col-sm-6 col-lg-6 mx-auto">
@@ -744,7 +811,7 @@
         </ul>
       </div>
     </div>
-  </div>
+  </div> --}}
 
   <!-- START THE COPYRIGHT INFO  -->
   <div class="footer-bottom pt-5 pb-5">
@@ -752,9 +819,7 @@
       <div class="row text-center text-white">
         <div class="col-12">
           <div class="footer-bottom__copyright">
-            &COPY; Copyright 2021 <a href="#">Company</a> | Created by <a href="http://codewithpatrick.com" target="_blank">Muriungi</a><br><br>
-
-            Distributed by <a href="http://themewagon.com" target="_blank">ThemeWagon</a>
+            &COPY; Copyright 2023 | Created by <a href="#" target="_blank">FlexList Team</a><br><br>            
           </div>
         </div>
       </div>
