@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/homee', function () {
     return view('layout.master'); // jadi dia nge return folder resources bagian views/welcome
 });
+
+Route::get('/loginprofil', function () {
+    return view('layout.ngetes'); // jadi dia nge return folder resources bagian views/welcome
+});

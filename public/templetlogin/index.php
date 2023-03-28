@@ -1,7 +1,7 @@
 <?php
 session_start();
-require("../assets/config.php");
-include '../assets/composer/google-api-client-php-7.4/config.php';
+require {{asset('templet/assets/config.php')}}; ////////////////////////////////////////////////////////////////
+include {{asset('templet/assets/composer/google-api-client-php-7.4/config.php')}}; //////////////////////////////////////
 $ip = $_SERVER['REMOTE_ADDR'];
 $id = random_number(7);
 
@@ -415,7 +415,9 @@ Anda baru saja login di laman web/aplikasi Mitra Industri, jika ini bukan anda s
 							Sign In
 						</button>
 					</div>
-					
+
+				
+
 					<div class="w-full text-center p-t-55">
 						<span class="txt2">
 							Don't have an account?
@@ -468,4 +470,3 @@ Anda baru saja login di laman web/aplikasi Mitra Industri, jika ini bukan anda s
 <?php
 }
 ?>
-

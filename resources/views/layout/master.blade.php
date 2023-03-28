@@ -228,14 +228,20 @@
     <div class="row text-center text-white">
       <h1 class="display-3 fw-bold">To Do List</h1>
       <hr style="width: 100px; height: 3px; " class="mx-auto">
-      <p class="lead pt-1">what our clients are saying</p>
+      
+      <div class="badan">
+        <div class="badannya">
+            {{-- <h1 class="titlenyah">to do list</h1> --}}
+            <input type="text" class="input-boxx" placeholder="Add to list!">
+            <ul class="lineli"></ul>
+            <button class="beton">ADD</button>
+        </div>
+        <script src="{{asset('templet/assets/js/mainn.js')}}"></script>
+        </div>
     </div>
 
    
         </div>
-      </div>
-    </div>
-  </div>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 </section>
 
@@ -251,14 +257,14 @@
     <div class="row text-center text-white">
       <h1 class="display-3 fw-bold">Schedule</h1>
       <hr style="width: 100px; height: 3px; " class="mx-auto">
-      <p class="lead pt-1">what our clients are saying</p>
+      {{-- <p class="lead pt-1">Lets create your schedule!</p> --}}
+      <center> <button type="button" class="rounded-pill btn-rounded border-primary">create my schedule
+        <span><i class="fas fa-arrow-right"></i></span>
+      </button></center>
     </div>
 
    
         </div>
-      </div>
-    </div>
-  </div>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 </section>
 
@@ -273,14 +279,24 @@
     <div class="row text-center text-white">
       <h1 class="display-3 fw-bold">Notes</h1>
       <hr style="width: 100px; height: 3px; " class="mx-auto">
-      <p class="lead pt-1">what our clients are saying</p>
+      {{-- <p class="lead pt-1">what our clients are saying</p> --}}
+      <form>
+      <div class="col-lg-12 mb-3">
+        <br><br><br>
+        <textarea name="message" placeholder="Tulis kritik dan saran anda di sini..." id="message" rows="7" class="shadow form-control form-control-lg"></textarea>
+      </div>
+      <div class="text-center d-grid mt-1">
+        <button type="button" class="btn btn-primary rounded-pill pt-3 pb-3">
+          submit
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+      
+    </form>
     </div>
 
    
         </div>
-      </div>
-    </div>
-  </div>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 </section>
 

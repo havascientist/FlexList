@@ -11316,4 +11316,257 @@ textarea.form-control-lg {
   transform: translate(-50%, -50%);
 }
 
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Varela', sans-serif;
+    box-sizing: border-box;
+  }
+  
+.badan{
+      height: 100vh;
+      background: #313130;
+      display: grid;
+      place-items: center;
+  }
+  
+  .badannya{
+      height: 400px;
+      width: 300px;
+      background: white;
+      position: relative;
+  }
+  
+  .titlenyah{
+      width: 100%;
+      height: 70px;
+      background: #ae00ff;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      text-transform: uppercase;
+  }
+  
+  .input-boxx{
+      position: absolute;
+      top: 90px;
+      left: 20px;
+      height: 45px;
+      font-size: 21px;
+      border: none;
+      width: 260px;
+      border-bottom: 2px solid #313130;
+      outline: none;
+      background: transparent;
+      padding: 0 10px;
+      color: #313130;
+
+  }
+  
+  /* .input-box::placeholder{
+      color: #313130;
+  } */
+  
+  .lineli{
+      position: absolute;
+      top: 150px;
+      left: 20px;
+      list-style: none;
+      height: 120px;
+      width: 260px;
+      overflow: auto;
+  }
+  
+  .lineli li{
+      height: 50px;
+      width: 100%;
+      margin: 4px 0;
+      position: relative;
+      left: 0;
+      border: 1px solid #1f3148;
+      overflow: hidden;
+  }
+  
+  .beton{
+      width: 220px;
+      height: 50px;
+      position: absolute;
+      left: 40px;
+      bottom: 20px;
+      background: #ae00ff;
+      outline: none;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      transition: all 0.8s ease-in;
+  }
+  
+  .beton:hover{
+      background: transparent;
+      border: 3px solid #ae00ff;
+      color: #ae00ff;
+      font-size: 20px;
+      border-radius: 4px;
+  }
+  
+  .lineli li h4{
+      width: 320px;
+      height: 50px;
+      padding: 0 10px;
+      display: flex;
+      align-items: center;
+      color: #1f3148;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+  }
+  
+  .lineli li .deleteTask{
+      height: 50px;
+      width: 40px;
+      z-index: 999;
+      display: grid;
+      place-items: center;
+      position: absolute;
+      right: -50px;
+      background: #ae00ff;
+      color: #e2e2e2;
+      transition: 0.7 all ease-in-out;
+  }
+  .lineli li:hover .deleteTask{
+      right: 0;
+  }
+  
+  /* //////////////////////////////////////////////////////////////////////////////////////// */
+  
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Varela', sans-serif;
+  box-sizing: border-box;
+}
+
+.badan{
+    height: 100vh;
+    background: transparent;
+    display: grid;
+    border-radius: 100px;
+    place-items: center;
+}
+
+.badannya{
+    height: 400px;
+    width: 300px;
+    background: transparent;
+    position: relative;
+}
+
+.titlenyah{
+    width: 100%;
+    height: 70px;
+    background: transparent;
+    color: black;
+    display: grid;
+    place-items: center;
+    text-transform: uppercase;
+}
+
+.input-boxx{
+    position: absolute;
+    top: 90px;
+    left: 20px;
+    height: 45px;
+    font-size: 21px;
+    border: none;
+    width: 260px;
+    border-bottom: 2px solid #313130;
+    outline: none;
+    background: transparent;
+    padding: 0 10px;
+    color: #313130;
+
+}
+
+.input-boxx::placeholder{
+    color: #313130;
+}
+
+.lineli{
+    position: absolute;
+    top: 150px;
+    left: 20px;
+    list-style: none;
+    height: 120px;
+    width: 260px;
+    overflow: auto;
+}
+
+.lineli li{
+    height: 500px;
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+    left: 0;
+    border: 1px solid #1f3148;
+    overflow: hidden;
+}
+
+.beton{
+    width: 220px;
+    height: 50px;
+    position: absolute;
+    left: 40px;
+    bottom: 20px;
+    background: #ae00ff;
+    outline: none;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.8s ease-in;
+    border-radius: 20px;
+}
+
+.beton:hover{
+    background: transparent;
+    border: 3px solid #ae00ff;
+    color: #ae00ff;
+    font-size: 20px;
+    border-radius: 4px;
+}
+
+.lineli li h4{
+    width: 320px;
+    height: 50px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    color: #1f3148;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.lineli li .deleteTask{
+    height: 50px;
+    width: 40px;
+    z-index: 999;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    right: -50px;
+    background: #ae00ff;
+    color: #e2e2e2;
+    transition: 0.7 all ease-in-out;
+}
+.lineli li:hover .deleteTask{
+    right: 0;
+}
+
+
 /*# sourceMappingURL=style.css.map */
