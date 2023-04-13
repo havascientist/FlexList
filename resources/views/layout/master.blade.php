@@ -163,9 +163,9 @@
           <p class="lh-lg">
             Notes merupakan salah satu fitur FlexList dimana anda dapat mencatat/menulis catatan anda dalam bentuk online sehingga dapat di akses kapanpun dan di manapun.
           </p>
-          <button type="button" class="rounded-pill btn-rounded border-primary"> lebih lanjut
+         <a href="#notes"> <button type="button" class="rounded-pill btn-rounded border-primary"> lebih lanjut
             <span><i class="fas fa-arrow-right"></i></span>
-          </button>
+          </button> </a>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end">
@@ -188,9 +188,9 @@
           <p class="lh-lg">
             FlexList menyediakan fitur Schedule dimana anda dapat melakukan perencanaan jadwal keseharian dan memvisualisasikannya dalam fitur ini. 
           </p>
-          <button type="button" class="rounded-pill btn-rounded border-primary">Learn more
-            <span><i class="fas fa-arrow-right"></i></span>
-          </button>
+          <a href="#Schedule"><button type="button" class="rounded-pill btn-rounded border-primary">Learn more
+            <span><i class="fas fa-arrow-right"></i></span> 
+          </button></a>
         </div>
       </div>
     </div>
@@ -199,13 +199,13 @@
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
         <div class="services__content">
           <div class="icon d-block fas fa-server"></div>
-          <h3 class="display-3--title mt-1">To Do</h3>
+          <h3 class="display-3--title mt-1" >To Do</h3>
           <p class="lh-lg">
             Merupakan fitur utama FlexList. Dimana anda dapat membuat perencanaan baik jangka pendek hingga jangka panjang dalam bentuk list-list.
           </p>
-          <button type="button" class="rounded-pill btn-rounded border-primary">Learn more
-            <span><i class="fas fa-arrow-right"></i></span>
-          </button>
+          <a href="#todolis"> <button type="button" class="rounded-pill btn-rounded border-primary" >Learn more
+            <span><i class="fas fa-arrow-right" ></i></span>
+          </button> </a>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end">
@@ -228,17 +228,143 @@
     <div class="row text-center text-white">
       <h1 class="display-3 fw-bold">To Do List</h1>
       <hr style="width: 100px; height: 3px; " class="mx-auto">
-      
-      <div class="badan">
-        <div class="badannya">
-            {{-- <h1 class="titlenyah">to do list</h1> --}}
-            <input type="text" class="input-boxx" placeholder="Add to list!">
-            <ul class="lineli"></ul>
-            <button class="beton">ADD</button>
+      <section id="home">
+        <div class="container">          
+          <div class="flex">
+            <div class="header-bar"></div>
+          </div> <br> <br>
+          <div class="flex row-gt-sm">
+            <div class="flex flex-50-gt-sm">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto">
+                <input id="input-field" class="form-control" type="text" placeholder="Tuliskan list anda hari ini..">
+              </div> <br>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto my-1 text-right">
+                <button id="btn-save" type="button" class="btn btn-outline-info"><span class="fa fa-plus"></span></button>
+                <button id="btn-delete" type="button" class="btn btn-outline-danger"><span id="btn-icon"
+                    class="fa fa-eraser"></span></button>
+              </div>
+            </div>
+          </div>
+          <br> <br>           
+          <!-- TASKS -->
+          <center> <div class="flex row-gt-sm">
+            
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <div class="container">
+                <div class="row">
+                  <div id='listed' class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 p-3 card-columns">                    
+                  </div>
+                </div>
+              </div>
+            </div>        
+          </div> <center>
+          
+          <center> <button type="button" class="rounded-pill btn-rounded border-primary">Lebih lanjut tentang list.. <center>
+             <span><i class="fas fa-arrow-right"></i></span> 
+           </button>
+  
+  
         </div>
-        <script src="{{asset('templet/assets/js/mainn.js')}}"></script>
-        </div>
+      </section>
     </div>
+  
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script type='text/javascript' src='app.js'></script>
+  
+    <script>var inputEl = document.getElementById('input-field');
+      var colorsEl = document.getElementsByClassName('color-box');
+      var btnSaveEl = document.getElementById('btn-save');
+      var btnDeleteEl = document.getElementById('btn-delete');
+      var listEl = document.getElementById('listed');
+      
+      var noteCount = 0;
+      var activeNote = null;
+      
+      for (var i = 0; i < colorsEl.length; i++) {
+        var color = convertColor(colorsEl[i].style.backgroundColor);
+        colorsEl[i].setAttribute('onclick', 'inputColor("' + color + '")');
+      }
+      
+      function convertColor(color) {
+        var result = w3color(color.toLowerCase());
+        return result.valid ? result.toHexString() : '';
+      }
+      
+      function inputColor(color) {
+        inputEl.style.backgroundColor = color;
+      }
+      
+      inputEl.onkeypress = function (event) {
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == '13') {
+          btnSaveEl.onclick();
+        }
+      }
+      
+      btnSaveEl.onclick = function () {
+        var text = inputEl.value;
+        if (text === '') {
+          alert('Tolong buat catatan.');
+          return;
+        }
+        var id = noteCount + 1;
+        var color = inputEl.style.backgroundColor;
+        if (activeNote) {
+          document.querySelector('#listed div[id=note' + activeNote + ']').style.backgroundColor = color;
+          document.querySelector('#listed div[id=note' + activeNote + '] p').textContent = text;
+          document.getElementById("btn-icon").classList.remove("fa-remove");
+          document.getElementById("btn-icon").classList.add("fa-eraser");
+          activeNote = null;
+        } else {
+          var textEl = document.createElement('p');
+          textEl.setAttribute('class', 'card-text p-3');
+          textEl.appendChild(document.createTextNode(text));
+          var containerEl = document.createElement('div');
+          containerEl.setAttribute('id', 'note' + id);
+          containerEl.setAttribute('class', 'card shadow-sm rounded');
+          containerEl.setAttribute('onclick', 'editNote(' + id + ')');
+          containerEl.style.backgroundColor = color || '#fff';
+      
+          containerEl.appendChild(textEl);
+          listEl.appendChild(containerEl);
+      
+          noteCount++;
+        }
+      
+        inputEl.value = '';
+        inputEl.style.backgroundColor = '#fff';
+      }
+      
+      function editNote(id) {
+        var itemEl = document.getElementById('note' + id);
+        var textItem = itemEl.querySelector('p').textContent;
+        activeNote = id;
+        inputEl.value = textItem;
+        inputEl.style.backgroundColor = itemEl.style.backgroundColor;
+      
+        document.getElementById("btn-icon").classList.remove("fa-eraser");
+        document.getElementById("btn-icon").classList.add("fa-remove");
+      }
+      
+      btnDeleteEl.onclick = function () {
+        if (activeNote) {
+          var note = listEl.querySelector('div[id=note' + activeNote + ']');
+          note.remove();
+          activeNote = null;
+        }
+        inputEl.value = '';
+        inputEl.style.backgroundColor = '#fff';
+        document.getElementById("btn-icon").classList.remove("fa-remove");
+        document.getElementById("btn-icon").classList.add("fa-eraser");
+      }</script>
+  </body>
+     
 
    
         </div>
@@ -257,9 +383,10 @@
     <div class="row text-center text-white">
       <h1 class="display-3 fw-bold">Schedule</h1>
       <hr style="width: 100px; height: 3px; " class="mx-auto">
-      {{-- <p class="lead pt-1">Lets create your schedule!</p> --}}
+      <p class="lead pt-1">Lets create your schedule!</p>
+      <img src="{{asset('templet/images/okiii.png')}}" width="300px" height="900px"> 
       <center> <button type="button" class="rounded-pill btn-rounded border-primary">create my schedule
-        <span><i class="fas fa-arrow-right"></i></span>
+        <span><i class="fas fa-arrow-right"></i></span> 
       </button></center>
     </div>
 
