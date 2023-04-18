@@ -310,6 +310,7 @@ label {
 
 button {
   border-radius: 0;
+  text-decoration: none;
 }
 
 button:focus:not(:focus-visible) {
@@ -1269,6 +1270,7 @@ progress {
 
   .col-md-6 {
     flex: 0 0 auto;
+    text-decoration: none;
     width: 50%;
   }
 

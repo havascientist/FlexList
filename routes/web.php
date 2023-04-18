@@ -20,5 +20,5 @@ Route::get('/homee', function () {
 });
 
 Route::get('/loginprofil', function () {
-    return view('layout.ngetes'); // jadi dia nge return folder resources bagian views/welcome
+    return view('layout.schedule'); // jadi dia nge return folder resources bagian views/welcome
 });
