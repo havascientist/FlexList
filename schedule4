@@ -1,0 +1,157 @@
+<?php
+include 'koneksi.php';
+if (isset($_SESSION['user'])) {
+    $check_akun = mysqli_query($koneksi, "SELECT * FROM akun WHERE username = '".$_SESSION['user']['username']."'");
+    $data_akun = mysqli_fetch_assoc($check_akun);
+    $sess_username = $_SESSION['user']['username'];
+} else {
+    header("Location : ".$url."login");
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kalender</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
+</head>
+<body>
+  <div id="calendar"></div>
+
+  <!-- Modal tambah jadwal kegiatan -->
+  <div id="modal-tambah-jadwal" class="modal">
+    <div class="modal-content">
+      <h4>Tambah Jadwal Kegiatan</h4>
+      <form id="form-jadwal-kegiatan">
+        <input type="hidden" name="username" value="<?php echo $sess_username ?>">
+        <div class="input-field">
+          <input type="text" id="kegiatan" name="kegiatan" required>
+          <label for="kegiatan">Kegiatan</label>
+        </div>
+        <div class="input-field">
+          <input type="date" id="tanggal" name="tanggal" required>
+          <label for="tanggal">Tanggal</label>
+        </div>
+        <button type="submit" class="btn">Simpan</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      // inisialisasi kalender
+      $('#calendar').fullCalendar({
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'month,agendaWeek,agendaDay'
+        },
+        defaultView: 'month',
+        selectable: true,
+        selectHelper: true,
+        select: function(start, end) {
+          // tampilkan modal tambah jadwal kegiatan
+          $('#modal-tambah-jadwal').modal('open');
+          $('#tanggal').val(moment(start).format('YYYY-MM-DD'));
+        },
+        editable: true,
+        eventResize: function(event, delta, revertFunc) {
+          // update jadwal kegiatan saat diubah ukuran nya
+          updateJadwalKegiatan(event.id, event.start.format(), event.end.format());
+        },
+        eventDrop: function(event, delta, revertFunc) {
+          // update jadwal kegiatan saat digeser
+          updateJadwalKegiatan(event.id, event.start.format(), event.end.format());
+        },
+        eventClick: function(event, jsEvent, view) {
+          // tampilkan dialog konfirmasi untuk hapus jadwal kegiatan
+          if (confirm('Anda yakin ingin menghapus jadwal kegiatan ini?')) {
+            deleteJadwalKegiatan(event.id);
+          }
+        },
+        events: 'jadwal_kegiatan.php?username=<?php echo $sess_username ?>'
+      });
+
+      // inisialisasi modal
+      $('.modal').modal();
+
+      // tambahkan event listener untuk submit form
+      $('#form-jadwal-kegiatan').on('submit', function(event) {
+        event.preventDefault();
+
+        // ambil data dari formulir
+        var kegiatan = $('#kegiatan').val();
+        var tanggal = $('#tanggal').val();
+
+        // kirim data ke script
+    $.ajax({
+      url: 'tambah_jadwal_kegiatan.php',
+      type: 'POST',
+      data: {
+        username: '<?php echo $sess_username ?>',
+        kegiatan: kegiatan,
+        tanggal: tanggal
+      },
+      success: function(response) {
+        // tampilkan jadwal kegiatan yang baru ditambahkan
+        $('#calendar').fullCalendar('renderEvent', {
+          id: response.id,
+          title: kegiatan,
+          start: moment(tanggal),
+          allDay: true
+        });
+
+        // tutup modal tambah jadwal kegiatan
+        $('#modal-tambah-jadwal').modal('close');
+
+        // reset form
+        $('#form-jadwal-kegiatan')[0].reset();
+      },
+      error: function(xhr, status, error) {
+        console.log('Error:', error);
+      }
+    });
+  });
+});
+
+function updateJadwalKegiatan(id, start, end) {
+  // update jadwal kegiatan
+  $.ajax({
+    url: 'update_jadwal_kegiatan.php',
+    type: 'POST',
+    data: {
+      id: id,
+      start: start,
+      end: end
+    },
+    success: function(response) {
+      console.log('Jadwal kegiatan diupdate');
+    },
+    error: function(xhr, status, error) {
+      console.log('Error:', error);
+    }
+  });
+}
+
+function deleteJadwalKegiatan(id) {
+  // hapus jadwal kegiatan
+  $.ajax({
+    url: 'hapus_jadwal_kegiatan.php',
+    type: 'POST',
+    data: {
+      id: id
+    },
+    success: function(response) {
+      // hapus jadwal kegiatan dari kalender
+      $('#calendar').fullCalendar('removeEvents', id);
+    },
+    error: function(xhr, status, error) {
+      console.log('Error:', error);
+    }
+  });
+}
+</script>
+</body>
+</html>
