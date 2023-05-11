@@ -1,0 +1,44 @@
+<?php
+$conn = new mysqli('localhost', 'flexlist_app', 'flexlist_app', 'flexlist_app');
+
+if ($conn->connect_error) {
+	die("Connection failed: " . $conn->connect_error);
+}
+
+if (isset($_POST['delete_id'])) {
+	$id = $_POST['delete_id'];
+	$sql = "DELETE FROM tasks WHERE id = $id";
+	if ($conn->query($sql) === TRUE) {
+		echo "Task deleted successfully";
+	} else {
+		echo "Error deleting task: " . $conn->error;
+	}
+}
+
+$sql = "SELECT * FROM tasks ORDER BY id DESC";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+	while($row = $result->fetch_assoc()) {
+	   // echo "<li class='task' id=" . $row['id'] . ">" . $row['task'] . "</li>";
+		echo "<li class='task'>
+		                        <label for='" . $row['id'] . "'>
+                                    <input type='checkbox'><p>" . $row['task'] . "</p>
+                                </label>
+                                <div class='settings'>
+                                    <i onclick='showMenu(this)' class='uil uil-ellipsis-h'></i>
+                                    <ul class='task-menu'>
+                                        <li><i class='uil uil-pen'></i>Edit</li>
+                                        <li><i class='uil uil-trash'></i>Delete</li>
+                                    </ul>
+                                </div>
+                </li>
+		";
+	}
+} else {
+	echo "No tasks";
+}
+
+$conn->close();
+?>
